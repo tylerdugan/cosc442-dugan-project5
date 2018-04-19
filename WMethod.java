@@ -387,6 +387,15 @@ public class WMethod{
      // Example use of the Utilities.runFSM() method
      // Utilities.runFSM(FSM, 1, "a a b a b", " ");
      
+     
+     //Utilities.testCases stores comma seperated list of test cases
+     // Use these against Utilities.runFSM
+     // Print console output to file to task1 folder
+     
+    Utilities.runFSM(FSM, 1, tests.toString().substring(1, tests.toString().length()-1), ",");
+     // substring needed to remove brackets from input to runFSM
+     
+     
    }// End of main()
    
 }//End of class WMethod
