@@ -94,7 +94,7 @@ public class Utilities{
         Edge nextStateEdge=FSM[currentState].getNextState(token);
         String outputGenerated=nextStateEdge.output();
         int nextState=nextStateEdge.tail();
-        outputPattern=outputPattern+outputGenerated;
+        outputPattern=outputPattern+outputGenerated + " ";
         Utilities.debugFSMExecution(" Input: "+token+" Next state: "+nextState+" Output: "+outputGenerated);
         currentState=nextState;
       }catch (NoNextStateException e){

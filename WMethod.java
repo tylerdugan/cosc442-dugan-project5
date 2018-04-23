@@ -398,11 +398,11 @@ public class WMethod{
       */
      
      //System.out.println(tests.toString().substring(1, tests.toString().length()-1));
-     System.out.println("Test:");
+     //System.out.println("Test:");
      //System.out.println(tokenSeperator(tests.toString().substring(1, tests.toString().length()-1)));
-     System.out.println(tokenSeperator("0, 00, 01, 1, 10, 100, 1000, 1001, 101, 1010, 1011, 11, 110, 111"));
+     //System.out.println(tokenSeperator("0, 00, 01, 1, 10, 100, 1000, 1001, 101, 1010, 1011, 11, 110, 111"));
      
-     //Utilities.runFSM(FSM, 1, tests.toString().substring(1, tests.toString().length()-1), ",");
+     Utilities.runFSM(FSM, 1, tokenSeperator(tests.toString().substring(1, tests.toString().length()-1)), ",");
      
 
      // substring needed to remove brackets from input to runFSM
@@ -410,28 +410,30 @@ public class WMethod{
      
    }// End of main()
    
-   public static String tokenSeperator(String in) {
-	   String output = "";;
-	   StringTokenizer tk = new StringTokenizer(in, ",");
+   public static String tokenSeperator(String input) {
+	   String output = "";
+	   StringTokenizer tk = new StringTokenizer(input, ",");
 	   
 	   while(tk.hasMoreTokens()) {
 		   String nextToken = tk.nextToken();
 		   
 		   if(nextToken.length() == 1) {
-				  output.concat(nextToken);
-
+				  output += nextToken + ",";
 			  } 
-		   else {
+		   else if(nextToken.length() != 1) {
 			   for(int i=0; i<nextToken.length(); i++) {
-
-					  //create loop that breaks down token	
-				   output.concat(Character.toString(nextToken.charAt(i)) + ",");
-
+				   if(nextToken.charAt(i) == ' ') {
+					   
+				   } else
+				   output += (Character.toString(nextToken.charAt(i)) + ",");
 			   }
 		  }
+
 	   }
+	   output = output.substring(0, output.length()-1);
 	   return output;
    }
+   
    
 }//End of class WMethod
 
