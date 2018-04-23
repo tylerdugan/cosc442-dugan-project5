@@ -108,7 +108,7 @@ public class Utilities{
   }
   
   public static void writeOutput(String output) throws FileNotFoundException {
-	  File opf = new File(".\\task1\\output.txt");
+	  File opf = new File(".\\task2\\output.txt");
 	  
 	  FileWriter fr = null;
       try {
