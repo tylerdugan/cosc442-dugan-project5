@@ -351,7 +351,7 @@ public class WMethod{
    /* 
    Driver for the W-algorithm.
    */
-   public static void main(String [] args){
+   public static void main(String [] args) throws FileNotFoundException{
      
      System.out.println("Test Generation Using the W-method. V2.0. August 1, 2013\n");
      fileSource=new Scanner(System.in);

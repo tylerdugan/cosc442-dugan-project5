@@ -74,7 +74,7 @@ public class Utilities{
   
   
   
-  public static void runFSM(State [] FSM, int stateID, String input, String separator){
+  public static void runFSM(State [] FSM, int stateID, String input, String separator) throws FileNotFoundException{
     
     // input is a sequence of  symbols  from the input alphabet separated by string in separator.
     // StateId is the ID of the state to which input is to be applied.
@@ -103,5 +103,13 @@ public class Utilities{
     }
     Utilities.debugFSMExecution("\nFSM execution completed. Final state: "+currentState);
     Utilities.debugFSMExecution("Output pattern:"+outputPattern);
+    
+    writeOutput("C:\\Users\\tyler.dugan\\git\\cosc442-dugan-project5\\Task1\\output.txt", outputPattern);
+  }
+  
+  public static void writeOutput(String filePath, String output) throws FileNotFoundException {
+	  PrintWriter wr = new PrintWriter("filepath");
+	  wr.write(output);
+	  
   }
 }// End of class Utilities.
