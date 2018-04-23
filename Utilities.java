@@ -104,12 +104,26 @@ public class Utilities{
     Utilities.debugFSMExecution("\nFSM execution completed. Final state: "+currentState);
     Utilities.debugFSMExecution("Output pattern:"+outputPattern);
     
-    writeOutput("C:\\Users\\tyler.dugan\\git\\cosc442-dugan-project5\\Task1\\output.txt", outputPattern);
+    writeOutput(outputPattern);
   }
   
-  public static void writeOutput(String filePath, String output) throws FileNotFoundException {
-	  PrintWriter wr = new PrintWriter("filepath");
-	  wr.write(output);
+  public static void writeOutput(String output) throws FileNotFoundException {
+	  File opf = new File("C:\\Users\\tyler.dugan\\git\\cosc442-dugan-project5\\Task1\\output.txt");
 	  
+	  FileWriter fr = null;
+      try {
+          fr = new FileWriter(opf);
+          fr.write(output);
+      } catch (IOException e) {
+          e.printStackTrace();
+      }finally{
+          //close resources
+          try {
+              fr.close();
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
+      }
   }
+  
 }// End of class Utilities.
