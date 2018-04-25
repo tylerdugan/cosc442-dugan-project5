@@ -402,7 +402,8 @@ public class WMethod{
      //System.out.println(tokenSeperator(tests.toString().substring(1, tests.toString().length()-1)));
      //System.out.println(tokenSeperator("0, 00, 01, 1, 10, 100, 1000, 1001, 101, 1010, 1011, 11, 110, 111"));
      
-     Utilities.runFSM(FSM, 1, tokenSeperator(tests.toString().substring(1, tests.toString().length()-1)), ",");
+     //Utilities.runFSM(FSM, 1, tokenSeperatorTask1(tests.toString().substring(1, tests.toString().length()-1)), ",");
+     Utilities.runFSM(FSM, 1, tests.toString().substring(1, tests.toString().length()-1), ",");
      
 
      // substring needed to remove brackets from input to runFSM
@@ -410,7 +411,7 @@ public class WMethod{
      
    }// End of main()
    
-   public static String tokenSeperator(String input) {
+   public static String tokenSeperatorTask1(String input) {
 	   String output = "";
 	   StringTokenizer tk = new StringTokenizer(input, ",");
 	   
@@ -433,6 +434,8 @@ public class WMethod{
 	   output = output.substring(0, output.length()-1);
 	   return output;
    }
+   
+   
    
    
 }//End of class WMethod
