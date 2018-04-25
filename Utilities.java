@@ -104,7 +104,7 @@ public class Utilities{
     Utilities.debugFSMExecution("\nFSM execution completed. Final state: "+currentState);
     Utilities.debugFSMExecution("Output pattern:"+outputPattern);
     
-    writeOutput(outputPattern);
+   // writeOutput(outputPattern);
   }
   
   public static void writeOutput(String output) throws FileNotFoundException {
